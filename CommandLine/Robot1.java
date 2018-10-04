@@ -1,1 +1,3 @@
-//jhwergjuwnvgnw
+public class Robot1 {
+
+}
