@@ -15,23 +15,38 @@ public class KillerBot extends HummingbirdRobot {
 
     public KillerBot() {
         super();
-
     }
 
     public void search() {
         operation = 1;
         while (operation == 1) {
-            if (sensor1 > 50) {
-                while (sensor2 < 50) { System.out.println("Sensor 2 detection");
-                    setMotorVelocity(1, 225);
-                }
+            sensor1 = getSensorValue(1);
+            sensor2 = getSensorValue(2);
+            sensor3 = getSensorValue(3);
+            if ((sensor1 > 50) && (sensor2 <= 50))) {
+                    left();
             }
-            if (sensor3 > 50) {
-                while (sensor2 < 50) {
-                    System.out.println("Sensor 3 detection");
-                    setMotorVelocity(2, 225);
-                }
+            if ((sensor3 > 50) && (sensor2 <= 50)) {
+                    forward();
+            }
+            if ((sensor2 > 50) && (sensor1 <= 50) && (sensor3 <= 50)) {
+                    right();
             }
         }
+    }
+
+    public void left() {
+        setMotorVelocity(1, 255);
+        setMotorVelocity(2, 0);
+    }
+
+    public void forward() {
+        setMotorVelocity(1, 255);
+        setMotorVelocity(2, 255);
+    }
+
+    public void right() {
+        setMotorVelocity(1, 0);
+        setMotorVelocity(2, 255);
     }
 }
