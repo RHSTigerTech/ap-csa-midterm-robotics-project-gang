@@ -1,52 +1,37 @@
 package MidTerm;
 
+import com.sun.speech.freetts.en.us.FeatureProcessors;
 import edu.cmu.ri.createlab.hummingbird.HummingbirdRobot;
 
-public class KillerBot {
+public class KillerBot extends HummingbirdRobot {
 
-    HummingbirdRobot Jason = new HummingbirdRobot();
 
-    int eye = 0;
+    private int sensor1;
+    private int sensor2;
+    private int sensor3;
+    private int operation;
+    private int x = 1;
 
-    public KillerBot () {
+
+    public KillerBot() {
+        super();
 
     }
 
-    public void lights () {
-        Jason.setLED(1, 255);
-        Jason.setLED(2, 255);
-    }
-
-    public void lightsOff () {
-        Jason.setLED(1, 0);
-        Jason.setLED(2, 0);
-    }
-
-    public int see () {
-        if (Jason.getSensorValue(1) > 30) {
-            eye = 1;
-        }
-        else if (Jason.getSensorValue(2) > 30) {
-            eye = 0;
-        }
-        else {
-            eye = -1;
-        }
-        return  eye;
-    }
-
-    public void move() {
-        if(eye > 0) {
-            Jason.setMotorVelocity(1, 255);
-            Jason.setMotorVelocity(2, 150);
-        }
-        else if (eye == 0) {
-            Jason.setMotorVelocity(1, 255);
-            Jason.setMotorVelocity(2, 255);
-        }
-        else {
-            Jason.setMotorVelocity(1, 150);
-            Jason.setMotorVelocity(2, 255);
+    public void search() {
+        operation = 1;
+        while (operation == 1) {
+            if (sensor1 > 50) {
+                while (sensor2 < 50) { System.out.println("Sensor 2 detection");
+                    setMotorVelocity(1, 225);
+                }
+            }
+            if (sensor3 > 50) {
+                while (sensor2 < 50) {
+                    System.out.println("Sensor 3 detection");
+                    setMotorVelocity(2, 225);
+                }
+            }
         }
     }
 }
