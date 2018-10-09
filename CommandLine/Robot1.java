@@ -5,14 +5,15 @@ public class Robot1 extends HummingbirdRobot {
         HummingbirdRobot bob = new HummingbirdRobot();
 
 
-        bob.setMotorVelocity(1,0);
+
         int x = 1;
         while(x<100000) {
-            int s = bob.getSensorValue(1);
-            System.out.println("Sensor: " + s);
+            bob.speak("Don't touch my beans nigga");
+            Thread.sleep(2000);
+
         }
 
-
+//?
         bob.disconnect();
     }
 }
