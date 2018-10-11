@@ -21,19 +21,19 @@ public class KillerBot extends HummingbirdRobot  {
     public void startUp(String input){
         setLED(1,10);
         setLED(2,10);
-        System.out.println("Its spooky time " + vowelReplace() + "!");
+        //System.out.println("Its spooky time " + vowelReplace() + "!");
         speak("Hello there I am the killer bot");
         user = input;
     }
-
-    public String vowelReplace(){
-        spookyUser.replaceAll( "a", "\uD83C\uDF83" );
-        spookyUser.replaceAll( "e", "\uD83C\uDF83" );
-        spookyUser.replaceAll( "i", "\uD83C\uDF83" );
-        spookyUser.replaceAll( "o", "\uD83C\uDF83" );
-        spookyUser.replaceAll( "u", "\uD83C\uDF83" );
-        return(spookyUser);
-    }
+//
+//    public String vowelReplace(){
+//        spookyUser.replaceAll( "a", "\uD83C\uDF83" );
+//        spookyUser.replaceAll( "e", "\uD83C\uDF83" );
+//        spookyUser.replaceAll( "i", "\uD83C\uDF83" );
+//        spookyUser.replaceAll( "o", "\uD83C\uDF83" );
+//        spookyUser.replaceAll( "u", "\uD83C\uDF83" );
+//        return(spookyUser);
+//    }
 
 
 
